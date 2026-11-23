@@ -1,106 +1,638 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stock Education Hub – Start Learning</title>
-  <meta name="description" content="100% free stock market education. Learn chart reading, technical analysis, and risk management. No buy/sell tips. For learning purpose only.">
-  <link rel="canonical" href="https://example.com/">
-
-  <!-- Performance -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>ગુજરાતી Trader | India's Best Stock Market Channel</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Favicons (optional) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+  <!-- Meta Pixel Code (Replace YOUR_PIXEL_ID with actual Pixel ID) -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID'); 
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Stock Education Hub – Start Learning">
-  <meta property="og:description" content="Learn charts & risk management. No buy/sell tips. 100% educational.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://example.com/">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop">
-
-  <!-- Minimal CSS (inline for speed) -->
   <style>
-    :root{
-      --bg1:#0c0c1d;
-      --bg2:#1a1a2b;
-      --brand: #66ffcc;
-      --brand-2:#00f0ff;
-      --text:#ffffff;
-      --muted:#b5b5c3;
+    :root {
+      --bg-dark: #070708;
+      --card-bg: #111214;
+      --card-border: rgba(255, 255, 255, 0.07);
+      --gold-primary: #FFB800;
+      --gold-gradient: linear-gradient(135deg, #FFC815 0%, #FF9900 100%);
+      --green-profit: #00E676;
+      --text-main: #FFFFFF;
+      --text-muted: #9CA3AF;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:
-        linear-gradient(135deg, rgba(0,0,0,.45), rgba(0,0,0,.45)),
-        url('https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop') no-repeat center/cover fixed;
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      min-height:100vh;
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
     }
-    .container{
-      max-width:520px; margin:0 auto; padding:24px 18px; text-align:center; min-height:100vh; display:flex; flex-direction:column; justify-content:center;
-      backdrop-filter: saturate(130%);
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      overflow-x: hidden;
+      position: relative;
     }
-    .badge{display:inline-block; font-size:.78rem; padding:6px 10px; border:1px solid #2a2a3a; border-radius:999px; color:#d6eaff; background:rgba(0,240,255,.08); margin-bottom:14px}
-    h1{font-size:1.9rem; line-height:1.2; margin:6px 0 10px; background:linear-gradient(90deg,var(--brand-2),var(--brand)); -webkit-background-clip:text; background-clip:text; color:transparent;}
-    .sub{font-size:1rem; color:var(--muted); margin:0 auto 16px; max-width:36ch}
-    .pill{
-      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:rgba(0,255,153,.07); border:1px dashed rgba(0,255,153,.35); color:#d8ffe9; font-size:.9rem; margin:6px 0 18px;
+
+    /* Ambient Background Glow */
+    .bg-glow {
+      position: fixed;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(255, 184, 0, 0.14) 0%, rgba(7, 7, 8, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+      animation: pulseGlow 5s ease-in-out infinite alternate;
     }
-    ul.bullets{list-style:none; padding:0; margin:0 0 18px}
-    ul.bullets li{margin:8px 0; color:#e9eef9}
-    .cta{
-      display:inline-block; text-decoration:none; background:var(--brand); color:#041b14; padding:14px 18px; font-weight:700; border-radius:12px; box-shadow:0 0 0 0 rgba(0,255,153,.6); transform:translateZ(0);
-      transition:transform .15s ease;
-      animation:pulse 1.6s infinite;
+
+    @keyframes pulseGlow {
+      0% { opacity: 0.7; transform: translateX(-50%) scale(0.95); }
+      100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
     }
-    .cta:active{transform:scale(.98)}
-    @keyframes pulse{
-      0%{box-shadow:0 0 0 0 rgba(0,255,153,.55)}
-      70%{box-shadow:0 0 0 20px rgba(0,255,153,0)}
-      100%{box-shadow:0 0 0 0 rgba(0,255,153,0)}
+
+    /* Mobile-First Wrapper */
+    .container {
+      width: 100%;
+      max-width: 460px;
+      padding: 28px 18px 36px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
-    .fineprint{font-size:.86rem; color:var(--muted); margin:18px auto 0; max-width:44ch}
-    .disclaimer{font-size:.78rem; color:#9aa4b2; margin:18px auto 0; max-width:50ch}
-    .safe{display:flex; align-items:center; justify-content:center; gap:8px; margin-top:14px; color:#a1ffd6; font-size:.9rem}
-    .shield{width:18px; height:18px; display:inline-block; border-radius:4px; background:linear-gradient(135deg,#0df,#0f9)}
-    footer{opacity:.8; margin-top:22px; font-size:.78rem; color:#9aa4b2}
+
+    /* Brand Header */
+    .brand-title {
+      font-family: 'Noto Sans Gujarati', 'Plus Jakarta Sans', sans-serif;
+      font-size: 2.35rem;
+      font-weight: 800;
+      color: var(--gold-primary);
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      text-shadow: 0 0 24px rgba(255, 184, 0, 0.35);
+      animation: fadeDown 0.6s ease-out;
+    }
+
+    .brand-title span {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .sub-headline {
+      margin-top: 6px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .description {
+      margin-top: 12px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+      max-width: 340px;
+    }
+
+    /* Member Badge */
+    .member-badge {
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 16px;
+      border-radius: 50px;
+      background: rgba(255, 184, 0, 0.08);
+      border: 1px solid rgba(255, 184, 0, 0.28);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #FDE68A;
+      box-shadow: 0 0 18px rgba(255, 184, 0, 0.08);
+    }
+
+    /* Primary CTA Button */
+    .cta-btn {
+      margin-top: 20px;
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: 12px;
+      background: var(--gold-gradient);
+      color: #0B0B0C;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(255, 168, 0, 0.32);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      animation: btnPulse 2.4s infinite;
+    }
+
+    .cta-btn:active {
+      transform: scale(0.97);
+    }
+
+    .cta-btn::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+      transform: skewX(-20deg);
+      animation: shineSweep 3.5s infinite;
+    }
+
+    @keyframes shineSweep {
+      0%, 65% { left: -100%; }
+      100% { left: 150%; }
+    }
+
+    @keyframes btnPulse {
+      0% { box-shadow: 0 0 0 0 rgba(255, 184, 0, 0.45); }
+      70% { box-shadow: 0 0 0 12px rgba(255, 184, 0, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 184, 0, 0); }
+    }
+
+    /* Live Updates Header */
+    .live-section {
+      margin-top: 30px;
+      width: 100%;
+    }
+
+    .live-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .live-sub {
+      margin-top: 4px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      background-color: var(--green-profit);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--green-profit);
+      animation: blinkDot 1.4s infinite;
+    }
+
+    @keyframes blinkDot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    /* Auto-Scrolling Profit Feed */
+    .feed-viewport {
+      margin-top: 16px;
+      width: 100%;
+      height: 315px;
+      overflow: hidden;
+      position: relative;
+      mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 88%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 88%, transparent 100%);
+    }
+
+    .feed-track {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      animation: autoScrollUp 18s linear infinite;
+    }
+
+    .feed-viewport:hover .feed-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes autoScrollUp {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-50%); }
+    }
+
+    .feed-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 13px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(59, 130, 246, 0.14);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+    }
+
+    .user-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #F3F4F6;
+    }
+
+    .profit-val {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--green-profit);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Footer & Disclaimers */
+    .footer-area {
+      margin-top: 24px;
+      width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 18px;
+    }
+
+    .disclaimer-text {
+      font-size: 0.72rem;
+      line-height: 1.55;
+      color: #71717A;
+    }
+
+    .meta-disclaimer {
+      margin-top: 10px;
+      font-size: 0.68rem;
+      line-height: 1.45;
+      color: #52525B;
+    }
+
+    .policy-links {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .policy-links button {
+      background: none;
+      border: none;
+      color: #9CA3AF;
+      font-size: 0.73rem;
+      text-decoration: underline;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .policy-links button:hover {
+      color: var(--gold-primary);
+    }
+
+    .copyright {
+      margin-top: 14px;
+      font-size: 0.73rem;
+      color: #6B7280;
+    }
+
+    /* Modal Popup Styles */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(5px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 999;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #141518;
+      border: 1px solid rgba(255, 184, 0, 0.25);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 400px;
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: modalZoom 0.22s ease-out;
+    }
+
+    @keyframes modalZoom {
+      from { transform: scale(0.92); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-header {
+      padding: 15px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-header h3 {
+      font-size: 1rem;
+      color: var(--gold-primary);
+    }
+
+    .close-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .modal-body {
+      padding: 16px 18px;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: #D1D5DB;
+      overflow-y: auto;
+      text-align: left;
+    }
+
+    .modal-body p {
+      margin-bottom: 10px;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
+
+  <div class="bg-glow"></div>
+
   <main class="container">
-    <span class="badge">100% Educational • Policy Safe</span>
-    <h1>Stock Education Hub – Start Learning</h1>
-    <p class="sub">No tips, just education for beginners</p>
+    <!-- Title & Subtitle -->
+    <h1 class="brand-title">ગુજરાતી <span>Trader</span></h1>
+    <div class="sub-headline">📈 India's Best Stock Market Channel</div>
+    <p class="description">
+      Learn market strategies, trading insights and educational stock-market content from our community.
+    </p>
 
-    <div class="pill">🚫 No Buy/Sell Tips • ✅ For Learning Purpose Only</div>
+    <!-- Community Badge -->
+    <div class="member-badge">
+      ✅ <strong>2,00,000+</strong> Community Members
+    </div>
 
-    <ul class="bullets" aria-label="What you'll learn">
-      <li>• Chart basics & risk rules (no return promises)</li>
-      <li>• How to read trends without speculation</li>
-      <li>• Market discipline & common mistakes</li>
-    </ul>
+    <!-- Top CTA Button -->
+    <a href="https://t.me/+RYDYzhGexwM3YzNl" class="cta-btn secure-tg-btn" rel="noopener noreferrer">
+      🚀 JOIN OUR TELEGRAM
+    </a>
 
-    <!-- CTA goes to a page-specific bridge -->
-    <a class="cta" href="bridge-lp20.html" rel="nofollow">Start Learning</a>
+    <!-- Live Community Updates Section -->
+    <section class="live-section">
+      <div class="live-title">• LIVE COMMUNITY UPDATES</div>
+      <div class="live-sub"><span class="live-dot"></span> Today's Activity</div>
 
-    <div class="safe"><span class="shield" aria-hidden="true"></span> Ad Policy Friendly Content</div>
+      <div class="feed-viewport">
+        <div class="feed-track" id="feedTrack">
+          <!-- Set 1 -->
+          <div class="feed-card">
+            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Arjun</span></div>
+            <div class="profit-val">▲ +₹6,985</div>
+          </div>
+          <div class="feed-card">
+            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Divya</span></div>
+            <div class="profit-val">▲ +₹14,471</div>
+          </div>
+          <div class="feed-card">
+            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Sandeep</span></div>
+            <div class="profit-val">▲ +₹9,723</div>
+          </div>
+          <div class="feed-card">
+            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Meera</span></div>
+            <div class="profit-val">▲ +₹5,841</div>
+          </div>
+          <div class="feed-card">
+            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Kunal</span></div>
+            <div class="profit-val">▲ +₹13,256</div>
+          </div>
+          <div class="feed-card">
+            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Ritu</span></div>
+            <div class="profit-val">▲ +₹11,893</div>
+          </div>
 
-    <p class="fineprint">We focus on concepts & frameworks suitable for beginners.</p>
-    <p class="disclaimer"><em>This website is for educational purposes only. We do not provide investment, trading, or financial advice.</em></p>
+          <!-- Set 2 (Duplicate for seamless infinite loop) -->
+          <div class="feed-card">
+            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Arjun</span></div>
+            <div class="profit-val">▲ +₹6,985</div>
+          </div>
+          <div class="feed-card">
+            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Divya</span></div>
+            <div class="profit-val">▲ +₹14,471</div>
+          </div>
+          <div class="feed-card">
+            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Sandeep</span></div>
+            <div class="profit-val">▲ +₹9,723</div>
+          </div>
+          <div class="feed-card">
+            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Meera</span></div>
+            <div class="profit-val">▲ +₹5,841</div>
+          </div>
+          <div class="feed-card">
+            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Kunal</span></div>
+            <div class="profit-val">▲ +₹13,256</div>
+          </div>
+          <div class="feed-card">
+            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Ritu</span></div>
+            <div class="profit-val">▲ +₹11,893</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <footer>© <span id="y"></span> Market Basics Learning Hub</footer>
+    <!-- Bottom CTA Button -->
+    <a href="https://t.me/+RYDYzhGexwM3YzNl" class="cta-btn secure-tg-btn" rel="noopener noreferrer">
+      🚀 JOIN FREE NOW
+    </a>
+
+    <!-- Footer & Compliance -->
+    <footer class="footer-area">
+      <p class="disclaimer-text">
+        Stock market investments are subject to market risks. Past performance does not guarantee future results. This page is for educational and informational purposes only. Please conduct your own research before making any investment decision.
+      </p>
+
+      <p class="meta-disclaimer">
+        Disclaimer: This site is not a part of the Facebook™ website or Meta Platforms, Inc. Additionally, this site is NOT endorsed by Facebook™ or Meta in any way. FACEBOOK™ is a trademark of Meta Platforms, Inc.
+      </p>
+
+      <div class="policy-links">
+        <button type="button" onclick="openPolicy('terms')">Terms & Conditions</button>
+        <button type="button" onclick="openPolicy('privacy')">Privacy Policy</button>
+        <button type="button" onclick="openPolicy('disclaimer')">Disclaimer</button>
+        <button type="button" onclick="openPolicy('contact')">Contact Us</button>
+      </div>
+
+      <div class="copyright">© 2026 Gujarati Trader</div>
+    </footer>
   </main>
 
+  <!-- Policy Popup Modal -->
+  <div class="modal-overlay" id="policyModal" onclick="closePolicyOnBg(event)">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="modalTitle">Policy</h3>
+        <button type="button" class="close-btn" onclick="closePolicy()">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Anti-Bot, Fake Click Shield & Popup Logic -->
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // 1. Policy Popup Data
+    const policyContent = {
+      terms: {
+        title: "Terms & Conditions",
+        html: `<p>Welcome to <strong>Gujarati Trader</strong>. By accessing this website and joining our Telegram community, you agree that all shared charts, levels, and market discussions are strictly for educational and informational purposes.</p>
+               <p>We do not provide SEBI-registered investment advisory or guaranteed return schemes. You are solely responsible for your trading capital and decisions.</p>`
+      },
+      privacy: {
+        title: "Privacy Policy",
+        html: `<p>Your privacy is important to us. We do not sell, rent, or trade your personal information to third parties.</p>
+               <p>We use standard analytics and Meta Pixel cookies solely to measure ad performance and improve user experience. Clicking the CTA redirects you directly to Telegram's official platform.</p>`
+      },
+      disclaimer: {
+        title: "Risk & Regulatory Disclaimer",
+        html: `<p>Trading in Equities, Futures, and Options involves substantial risk of financial loss and is not suitable for every investor. Past community results shown are illustrative examples and do not guarantee future profits.</p>
+               <p>Consult a certified financial advisor before taking any live market positions.</p>`
+      },
+      contact: {
+        title: "Contact Us",
+        html: `<p>For support, educational queries, or feedback regarding Gujarati Trader community:</p>
+               <p><strong>Telegram Support:</strong> Available inside our official channel description.<br>
+               <strong>Response Time:</strong> Within 24 business hours.</p>`
+      }
+    };
+
+    function openPolicy(type) {
+      const data = policyContent[type];
+      if (!data) return;
+      document.getElementById('modalTitle').innerText = data.title;
+      document.getElementById('modalBody').innerHTML = data.html;
+      document.getElementById('policyModal').classList.add('active');
+    }
+
+    function closePolicy() {
+      document.getElementById('policyModal').classList.remove('active');
+    }
+
+    function closePolicyOnBg(e) {
+      if (e.target.id === 'policyModal') closePolicy();
+    }
+
+    // 2. Zero Fake-Click & Bot Protection Shield
+    (function () {
+      const pageLoadTime = Date.now();
+      let humanInteracted = false;
+      let leadFired = false;
+
+      // Detect genuine human interaction (touch, scroll, mouse move)
+      const markHuman = () => { humanInteracted = true; };
+      ['touchstart', 'mousemove', 'scroll', 'keydown'].forEach(evt => {
+        window.addEventListener(evt, markHuman, { once: true, passive: true });
+      });
+
+      function isBotEnvironment() {
+        const ua = navigator.userAgent || '';
+        const botRegex = /bot|crawl|spider|headless|phantom|selenium|puppeteer|playwright|facebookexternalhit|lighthouse/i;
+        if (navigator.webdriver) return true;
+        if (botRegex.test(ua)) return true;
+        if (window.outerWidth === 0 && window.outerHeight === 0) return true;
+        return false;
+      }
+
+      document.querySelectorAll('.secure-tg-btn').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+          const timeElapsed = Date.now() - pageLoadTime;
+          const isSyntheticEvent = !e.isTrusted || (e.clientX === 0 && e.clientY === 0);
+
+          // Block bots, automated crawlers, or ultra-fast (< 700ms) scripted clicks
+          if (isBotEnvironment() || isSyntheticEvent || (!humanInteracted && timeElapsed < 700)) {
+            e.preventDefault();
+            return false;
+          }
+
+          // Fire Meta Pixel 'Lead' only once per genuine human session
+          if (!leadFired && typeof fbq === 'function') {
+            leadFired = true;
+            fbq('track', 'Lead', {
+              content_name: 'Gujarati Trader Telegram',
+              content_category: 'Stock Market Education'
+            });
+          }
+        });
+      });
+    })();
   </script>
 </body>
 </html>
