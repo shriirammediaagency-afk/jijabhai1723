@@ -3,39 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>ગુજરાતી Trader | India's Best Stock Market Channel</title>
+  <title>GUJRATI TRADER | Daily Updates</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1455972766504771');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1455972766504771&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1455972766504771');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1455972766504771&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 
   <style>
     :root {
-      --bg-dark: #070708;
-      --card-bg: #111214;
-      --card-border: rgba(255, 255, 255, 0.07);
-      --gold-primary: #FFB800;
-      --gold-gradient: linear-gradient(135deg, #FFC815 0%, #FF9900 100%);
-      --green-profit: #00E676;
+      --outer-bg: #04070D;
+      --card-top: #10223D;
+      --card-bottom: #0A111D;
+      --card-border: rgba(56, 189, 248, 0.25);
+      --tg-blue-start: #38B6FF;
+      --tg-blue-end: #1A8CD8;
+      --box-bg: rgba(255, 255, 255, 0.035);
+      --box-border: rgba(255, 255, 255, 0.09);
       --text-main: #FFFFFF;
-      --text-muted: #9CA3AF;
+      --text-muted: #8FA2BC;
+      --green-live: #22C55E;
     }
 
     * {
@@ -46,171 +49,299 @@ src="https://www.facebook.com/tr?id=1455972766504771&ev=PageView&noscript=1"
     }
 
     body {
-      background-color: var(--bg-dark);
+      background-color: var(--outer-bg);
       color: var(--text-main);
       font-family: 'Plus Jakarta Sans', sans-serif;
       min-height: 100vh;
       display: flex;
       justify-content: center;
+      align-items: center;
+      padding: 12px;
       overflow-x: hidden;
       position: relative;
     }
 
-    /* Ambient Background Glow */
-    .bg-glow {
+    /* Ambient Background Aurora Glow */
+    .ambient-bg {
       position: fixed;
-      top: -120px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 360px;
-      height: 360px;
-      background: radial-gradient(circle, rgba(255, 184, 0, 0.14) 0%, rgba(7, 7, 8, 0) 70%);
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 15%, rgba(56, 189, 248, 0.14), transparent 55%),
+        radial-gradient(circle at 80% 85%, rgba(34, 197, 94, 0.08), transparent 50%);
       pointer-events: none;
       z-index: 0;
-      animation: pulseGlow 5s ease-in-out infinite alternate;
+      animation: auroraBreath 7s ease-in-out infinite alternate;
     }
 
-    @keyframes pulseGlow {
-      0% { opacity: 0.7; transform: translateX(-50%) scale(0.95); }
-      100% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+    @keyframes auroraBreath {
+      0% { opacity: 0.65; transform: scale(1); }
+      100% { opacity: 1; transform: scale(1.06); }
     }
 
-    /* Mobile-First Wrapper */
-    .container {
+    /* Main Mobile Container Card */
+    .phone-card {
       width: 100%;
-      max-width: 460px;
-      padding: 28px 18px 36px;
-      position: relative;
-      z-index: 1;
+      max-width: 420px;
+      background: radial-gradient(circle at 50% 0%, #173056 0%, var(--card-top) 34%, var(--card-bottom) 100%);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: 28px 20px 22px;
+      box-shadow:
+        0 28px 70px rgba(0, 0, 0, 0.85),
+        0 0 40px rgba(56, 189, 248, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.16);
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
     }
 
-    /* Brand Header */
-    .brand-title {
-      font-family: 'Noto Sans Gujarati', 'Plus Jakarta Sans', sans-serif;
-      font-size: 2.35rem;
-      font-weight: 800;
-      color: var(--gold-primary);
-      letter-spacing: -0.5px;
-      line-height: 1.15;
-      text-shadow: 0 0 24px rgba(255, 184, 0, 0.35);
-      animation: fadeDown 0.6s ease-out;
+    /* Floating Micro Particles */
+    .particle {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: rgba(56, 189, 248, 0.55);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: floatParticle 8s linear infinite;
+    }
+    .p1 { top: 18%; left: 14%; animation-delay: 0s; }
+    .p2 { top: 32%; right: 16%; animation-delay: 2s; width: 4px; height: 4px; }
+    .p3 { top: 62%; left: 10%; animation-delay: 4s; }
+    .p4 { top: 75%; right: 12%; animation-delay: 1.5s; }
+
+    @keyframes floatParticle {
+      0% { transform: translateY(0) scale(0.8); opacity: 0; }
+      30% { opacity: 0.9; }
+      70% { opacity: 0.7; }
+      100% { transform: translateY(-45px) scale(1.2); opacity: 0; }
     }
 
-    .brand-title span {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+    /* Step-by-Step Staggered Reveal (Safe for all browsers) */
+    .reveal {
+      animation: stepSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    .step-d1 { animation-delay: 0.05s; }
+    .step-d2 { animation-delay: 0.15s; }
+    .step-d4 { animation-delay: 0.30s; }
+    .step-d5 { animation-delay: 0.42s; }
+    .step-d6 { animation-delay: 0.54s; }
+    .step-d7 { animation-delay: 0.65s; }
+
+    @keyframes stepSlideUp {
+      from { transform: translateY(14px); }
+      to { transform: translateY(0); }
     }
 
-    .sub-headline {
-      margin-top: 6px;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #FFFFFF;
+    /* STEP 1: Logo with Dual Counter-Rotating Rings & Sonar Ripple */
+    .logo-wrapper {
+      position: relative;
+      width: 134px;
+      height: 134px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      margin-bottom: 18px;
     }
 
-    .description {
-      margin-top: 12px;
-      font-size: 0.85rem;
-      line-height: 1.5;
-      color: var(--text-muted);
-      max-width: 340px;
+    .sonar-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 1.5px solid rgba(56, 189, 248, 0.45);
+      animation: sonarExpand 2.8s cubic-bezier(0.16, 1, 0.3, 1) infinite;
     }
 
-    /* Member Badge */
-    .member-badge {
-      margin-top: 18px;
+    @keyframes sonarExpand {
+      0% { transform: scale(0.95); opacity: 0.85; }
+      100% { transform: scale(1.38); opacity: 0; }
+    }
+
+    .orbit-dashed {
+      position: absolute;
+      inset: -11px;
+      border-radius: 50%;
+      border: 1px dashed rgba(56, 189, 248, 0.35);
+      animation: spinReverse 16s linear infinite;
+    }
+
+    .orbit-glow {
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, #38BDF8, #F59E0B, #22C55E, #38BDF8);
+      padding: 3px;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: spinForward 5s linear infinite;
+    }
+
+    @keyframes spinForward { to { transform: rotate(360deg); } }
+    @keyframes spinReverse { to { transform: rotate(-360deg); } }
+
+    .logo-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #0B121E;
+      background-color: #0F172A;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.35);
+      animation: logoFloat 4s ease-in-out infinite;
+    }
+
+    @keyframes logoFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    .online-dot {
+      position: absolute;
+      bottom: 8px;
+      right: 10px;
+      width: 15px;
+      height: 15px;
+      background: var(--green-live);
+      border: 3px solid #0E192B;
+      border-radius: 50%;
+      z-index: 3;
+      box-shadow: 0 0 12px var(--green-live);
+      animation: pulseGreen 1.5s infinite;
+    }
+
+    @keyframes pulseGreen {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.24); }
+    }
+
+    /* STEP 2: Daily Updates Pill & Always-Visible Glowing Title */
+    .status-pill {
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      padding: 8px 16px;
+      padding: 5px 14px;
       border-radius: 50px;
-      background: rgba(255, 184, 0, 0.08);
-      border: 1px solid rgba(255, 184, 0, 0.28);
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #FDE68A;
-      box-shadow: 0 0 18px rgba(255, 184, 0, 0.08);
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.1px;
+      color: #E2E8F0;
     }
 
-    /* Primary CTA Button */
-    .cta-btn {
-      margin-top: 20px;
-      width: 100%;
-      padding: 16px 20px;
-      border-radius: 12px;
-      background: var(--gold-gradient);
-      color: #0B0B0C;
-      font-size: 1rem;
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green-live);
+      box-shadow: 0 0 8px var(--green-live);
+      animation: blinkDot 1.2s infinite;
+    }
+
+    @keyframes blinkDot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.25; }
+    }
+
+    .main-title {
+      margin-top: 14px;
+      font-size: 1.9rem;
       font-weight: 800;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.6px;
+      color: #FFFFFF !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      display: block;
+      z-index: 4;
+      animation: titleGlow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes titleGlow {
+      0% { text-shadow: 0 2px 14px rgba(56, 189, 248, 0.25); }
+      100% { text-shadow: 0 2px 24px rgba(56, 189, 248, 0.65), 0 0 8px rgba(255, 255, 255, 0.35); }
+    }
+
+    /* STEP 3: Always-Visible High-Impact Telegram CTA Button */
+    .tg-cta-btn {
+      margin-top: 18px;
+      width: 100%;
+      min-height: 54px;
+      padding: 15px 20px;
+      border-radius: 50px;
+      background: linear-gradient(90deg, var(--tg-blue-start) 0%, var(--tg-blue-end) 100%);
+      color: #FFFFFF !important;
+      font-size: 1rem;
+      font-weight: 700;
       text-decoration: none;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 8px 25px rgba(255, 168, 0, 0.32);
+      opacity: 1 !important;
+      visibility: visible !important;
+      z-index: 5;
+      box-shadow: 0 12px 28px rgba(42, 171, 238, 0.42);
       position: relative;
       overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      animation: btnPulse 2.4s infinite;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+      animation: ctaPulse 2.2s infinite;
     }
 
-    .cta-btn:active {
-      transform: scale(0.97);
+    .tg-cta-btn:hover {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 16px 34px rgba(56, 189, 248, 0.55);
     }
 
-    .cta-btn::after {
+    .tg-cta-btn:active {
+      transform: scale(0.96);
+    }
+
+    .tg-cta-btn::after {
       content: "";
       position: absolute;
       top: 0;
       left: -100%;
-      width: 60%;
+      width: 55%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
-      transform: skewX(-20deg);
-      animation: shineSweep 3.5s infinite;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.42), transparent);
+      transform: skewX(-22deg);
+      animation: shineSweep 2.8s infinite;
     }
 
     @keyframes shineSweep {
-      0%, 65% { left: -100%; }
-      100% { left: 150%; }
+      0%, 55% { left: -100%; }
+      100% { left: 155%; }
     }
 
-    @keyframes btnPulse {
-      0% { box-shadow: 0 0 0 0 rgba(255, 184, 0, 0.45); }
-      70% { box-shadow: 0 0 0 12px rgba(255, 184, 0, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(255, 184, 0, 0); }
+    @keyframes ctaPulse {
+      0% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.55); }
+      70% { box-shadow: 0 0 0 13px rgba(56, 189, 248, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
     }
 
-    /* Live Updates Header */
-    .live-section {
-      margin-top: 30px;
-      width: 100%;
+    .tg-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+      flex-shrink: 0;
+      animation: planeWiggle 2.5s ease-in-out infinite;
     }
 
-    .live-title {
-      font-size: 0.85rem;
-      font-weight: 800;
-      letter-spacing: 1px;
-      color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
+    @keyframes planeWiggle {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(2px, -2px); }
     }
 
-    .live-sub {
-      margin-top: 4px;
-      font-size: 0.75rem;
+    .sub-caption {
+      margin-top: 12px;
+      font-size: 0.78rem;
       color: var(--text-muted);
       display: flex;
       align-items: center;
@@ -218,145 +349,200 @@ src="https://www.facebook.com/tr?id=1455972766504771&ev=PageView&noscript=1"
       gap: 6px;
     }
 
-    .live-dot {
-      width: 7px;
-      height: 7px;
-      background-color: var(--green-profit);
-      border-radius: 50%;
-      box-shadow: 0 0 8px var(--green-profit);
-      animation: blinkDot 1.4s infinite;
-    }
-
-    @keyframes blinkDot {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-
-    /* Auto-Scrolling Profit Feed */
-    .feed-viewport {
-      margin-top: 16px;
+    /* STEP 4: 3-Step Animated Energy Flow */
+    .steps-row {
+      margin-top: 22px;
       width: 100%;
-      height: 315px;
-      overflow: hidden;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
       position: relative;
-      mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 88%, transparent 100%);
-      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 88%, transparent 100%);
     }
 
-    .feed-track {
+    .steps-track-line {
+      position: absolute;
+      top: 21px;
+      left: 20%;
+      right: 20%;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .steps-energy-beam {
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, #38BDF8, #22C55E, transparent);
+      animation: beamTravel 2.6s linear infinite;
+    }
+
+    @keyframes beamTravel {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(300%); }
+    }
+
+    .step-item {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      animation: autoScrollUp 18s linear infinite;
+      align-items: center;
+      position: relative;
+      z-index: 1;
     }
 
-    .feed-viewport:hover .feed-track {
-      animation-play-state: paused;
-    }
-
-    @keyframes autoScrollUp {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-50%); }
-    }
-
-    .feed-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
+    .step-icon-box {
+      width: 42px;
+      height: 42px;
       border-radius: 12px;
-      padding: 13px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .user-info {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .avatar {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background: rgba(59, 130, 246, 0.14);
-      border: 1px solid rgba(59, 130, 246, 0.25);
+      background: #132138;
+      border: 1px solid rgba(56, 189, 248, 0.2);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.85rem;
+      font-size: 1.05rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      animation: stepWave 3s ease-in-out infinite;
     }
 
-    .user-name {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #F3F4F6;
+    .step-item:nth-child(2) .step-icon-box { animation-delay: 0s; }
+    .step-item:nth-child(3) .step-icon-box { animation-delay: 1s; }
+    .step-item:nth-child(4) .step-icon-box { animation-delay: 2s; }
+
+    @keyframes stepWave {
+      0%, 100% {
+        transform: translateY(0);
+        border-color: rgba(255, 255, 255, 0.12);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+      }
+      35% {
+        transform: translateY(-4px);
+        border-color: rgba(56, 189, 248, 0.65);
+        box-shadow: 0 8px 20px rgba(56, 189, 248, 0.28);
+      }
     }
 
-    .profit-val {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--green-profit);
+    .step-label {
+      margin-top: 8px;
+      font-size: 0.72rem;
+      line-height: 1.3;
+      color: #94A3B8;
+      font-weight: 500;
+    }
+
+    /* STEP 5: 2x2 Feature Cards Grid */
+    .features-grid {
+      margin-top: 22px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .feature-card {
+      background: var(--box-bg);
+      border: 1px solid var(--box-border);
+      border-radius: 14px;
+      padding: 13px 12px;
       display: flex;
+      align-items: center;
+      gap: 10px;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.25s ease, background 0.25s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-3px) scale(1.02);
+      border-color: rgba(56, 189, 248, 0.45);
+      background: rgba(56, 189, 248, 0.07);
+    }
+
+    .feat-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.98rem;
+      flex-shrink: 0;
+    }
+
+    .feat-text {
+      font-size: 0.78rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: #E2E8F0;
+    }
+
+    /* Trust Strip */
+    .trust-strip {
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      font-size: 0.72rem;
+      color: #8FA2BC;
+    }
+
+    .trust-strip span {
+      display: inline-flex;
       align-items: center;
       gap: 4px;
     }
 
-    /* Footer & Disclaimers */
+    /* Footer & Compliance */
     .footer-area {
-      margin-top: 24px;
-      width: 100%;
+      margin-top: 16px;
+      padding-top: 14px;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 18px;
+      width: 100%;
     }
 
-    .disclaimer-text {
-      font-size: 0.72rem;
-      line-height: 1.55;
-      color: #71717A;
+    .copyright-line {
+      font-size: 0.7rem;
+      color: #64748B;
     }
 
     .meta-disclaimer {
-      margin-top: 10px;
-      font-size: 0.68rem;
+      margin-top: 8px;
+      font-size: 0.65rem;
       line-height: 1.45;
-      color: #52525B;
+      color: #475569;
     }
 
     .policy-links {
-      margin-top: 14px;
+      margin-top: 10px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .policy-links button {
       background: none;
       border: none;
-      color: #9CA3AF;
-      font-size: 0.73rem;
+      color: #94A3B8;
+      font-size: 0.7rem;
       text-decoration: underline;
       cursor: pointer;
       font-family: inherit;
     }
 
     .policy-links button:hover {
-      color: var(--gold-primary);
+      color: #38BDF8;
     }
 
-    .copyright {
-      margin-top: 14px;
-      font-size: 0.73rem;
-      color: #6B7280;
-    }
-
-    /* Modal Popup Styles */
+    /* Modal Popup */
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.82);
-      backdrop-filter: blur(5px);
+      background: rgba(3, 7, 18, 0.85);
+      backdrop-filter: blur(6px);
       display: none;
       align-items: center;
       justify-content: center;
@@ -369,25 +555,25 @@ src="https://www.facebook.com/tr?id=1455972766504771&ev=PageView&noscript=1"
     }
 
     .modal-box {
-      background: #141518;
-      border: 1px solid rgba(255, 184, 0, 0.25);
+      background: #0F172A;
+      border: 1px solid rgba(56, 189, 248, 0.28);
       border-radius: 16px;
       width: 100%;
-      max-width: 400px;
+      max-width: 390px;
       max-height: 80vh;
       display: flex;
       flex-direction: column;
       overflow: hidden;
-      animation: modalZoom 0.22s ease-out;
+      animation: modalPop 0.22s ease-out;
     }
 
-    @keyframes modalZoom {
+    @keyframes modalPop {
       from { transform: scale(0.92); opacity: 0; }
       to { transform: scale(1); opacity: 1; }
     }
 
     .modal-header {
-      padding: 15px 18px;
+      padding: 14px 18px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       display: flex;
       align-items: center;
@@ -395,26 +581,25 @@ src="https://www.facebook.com/tr?id=1455972766504771&ev=PageView&noscript=1"
     }
 
     .modal-header h3 {
-      font-size: 1rem;
-      color: var(--gold-primary);
+      font-size: 0.95rem;
+      color: #38BDF8;
     }
 
     .close-btn {
       background: rgba(255, 255, 255, 0.08);
       border: none;
       color: #fff;
-      width: 28px;
-      height: 28px;
+      width: 26px;
+      height: 26px;
       border-radius: 50%;
-      font-size: 1rem;
       cursor: pointer;
     }
 
     .modal-body {
       padding: 16px 18px;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       line-height: 1.6;
-      color: #D1D5DB;
+      color: #CBD5E1;
       overflow-y: auto;
       text-align: left;
     }
@@ -422,110 +607,104 @@ src="https://www.facebook.com/tr?id=1455972766504771&ev=PageView&noscript=1"
     .modal-body p {
       margin-bottom: 10px;
     }
-
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
   </style>
 </head>
 <body>
 
-  <div class="bg-glow"></div>
+  <div class="ambient-bg"></div>
 
-  <main class="container">
-    <!-- Title & Subtitle -->
-    <h1 class="brand-title">ગુજરાતી <span>Trader</span></h1>
-    <div class="sub-headline">📈 India's Best Stock Market Channel</div>
-    <p class="description">
-      Learn market strategies, trading insights and educational stock-market content from our community.
-    </p>
+  <main class="phone-card">
+    <!-- Floating Particles -->
+    <span class="particle p1"></span>
+    <span class="particle p2"></span>
+    <span class="particle p3"></span>
+    <span class="particle p4"></span>
 
-    <!-- Community Badge -->
-    <div class="member-badge">
-      ✅ <strong>2,00,000+</strong> Community Members
+    <!-- STEP 1: Animated Profile Logo (Replace src with your ImgBB Logo URL) -->
+    <div class="logo-wrapper reveal step-d1">
+      <div class="sonar-ring"></div>
+      <div class="orbit-dashed"></div>
+      <div class="orbit-glow"></div>
+      <img 
+        src="YOUR_IMGBB_LOGO_URL_HERE" 
+        alt="Gujrati Trader Logo" 
+        class="logo-img"
+        onerror="this.src='https://via.placeholder.com/150/0F172A/38BDF8?text=GT'"
+      />
+      <span class="online-dot"></span>
     </div>
 
-    <!-- Top CTA Button -->
-    <a href="https://t.me/+RYDYzhGexwM3YzNl" class="cta-btn secure-tg-btn" rel="noopener noreferrer">
-      🚀 JOIN OUR TELEGRAM
+    <!-- STEP 2: Live Status Pill & Always-Visible Channel Title -->
+    <div class="status-pill reveal step-d2">
+      <span class="pill-dot"></span> DAILY UPDATES
+    </div>
+
+    <h1 class="main-title">GUJRATI TRADER</h1>
+
+    <!-- STEP 3: Always-Visible Telegram CTA Button -->
+    <a href="https://t.me/+RYDYzhGexwM3YzNl" class="tg-cta-btn secure-tg-btn" rel="noopener noreferrer">
+      <svg class="tg-icon" viewBox="0 0 24 24">
+        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+      </svg>
+      <span>JOIN Telegram Channel →</span>
     </a>
 
-    <!-- Live Community Updates Section -->
-    <section class="live-section">
-      <div class="live-title">• LIVE COMMUNITY UPDATES</div>
-      <div class="live-sub"><span class="live-dot"></span> Today's Activity</div>
+    <div class="sub-caption">
+      🔒 Opens in the Telegram app · Free
+    </div>
 
-      <div class="feed-viewport">
-        <div class="feed-track" id="feedTrack">
-          <!-- Set 1 -->
-          <div class="feed-card">
-            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Arjun</span></div>
-            <div class="profit-val">▲ +₹6,985</div>
-          </div>
-          <div class="feed-card">
-            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Divya</span></div>
-            <div class="profit-val">▲ +₹14,471</div>
-          </div>
-          <div class="feed-card">
-            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Sandeep</span></div>
-            <div class="profit-val">▲ +₹9,723</div>
-          </div>
-          <div class="feed-card">
-            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Meera</span></div>
-            <div class="profit-val">▲ +₹5,841</div>
-          </div>
-          <div class="feed-card">
-            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Kunal</span></div>
-            <div class="profit-val">▲ +₹13,256</div>
-          </div>
-          <div class="feed-card">
-            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Ritu</span></div>
-            <div class="profit-val">▲ +₹11,893</div>
-          </div>
-
-          <!-- Set 2 (Duplicate for seamless infinite loop) -->
-          <div class="feed-card">
-            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Arjun</span></div>
-            <div class="profit-val">▲ +₹6,985</div>
-          </div>
-          <div class="feed-card">
-            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Divya</span></div>
-            <div class="profit-val">▲ +₹14,471</div>
-          </div>
-          <div class="feed-card">
-            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Sandeep</span></div>
-            <div class="profit-val">▲ +₹9,723</div>
-          </div>
-          <div class="feed-card">
-            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Meera</span></div>
-            <div class="profit-val">▲ +₹5,841</div>
-          </div>
-          <div class="feed-card">
-            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Kunal</span></div>
-            <div class="profit-val">▲ +₹13,256</div>
-          </div>
-          <div class="feed-card">
-            <div class="user-info"><div class="avatar">👤</div><span class="user-name">Ritu</span></div>
-            <div class="profit-val">▲ +₹11,893</div>
-          </div>
-        </div>
+    <!-- STEP 4: 3 Steps Animated Energy Flow -->
+    <div class="steps-row reveal step-d4">
+      <div class="steps-track-line"><div class="steps-energy-beam"></div></div>
+      <div class="step-item">
+        <div class="step-icon-box">👆</div>
+        <div class="step-label">Tap the<br>button</div>
       </div>
-    </section>
+      <div class="step-item">
+        <div class="step-icon-box">📩</div>
+        <div class="step-label">Request<br>to Join</div>
+      </div>
+      <div class="step-item">
+        <div class="step-icon-box">✅</div>
+        <div class="step-label">Get<br>approved</div>
+      </div>
+    </div>
 
-    <!-- Bottom CTA Button -->
-    <a href="https://t.me/+RYDYzhGexwM3YzNl" class="cta-btn secure-tg-btn" rel="noopener noreferrer">
-      🚀 JOIN FREE NOW
-    </a>
+    <!-- STEP 5: 2x2 Feature Grid -->
+    <div class="features-grid reveal step-d5">
+      <div class="feature-card">
+        <div class="feat-icon">📊</div>
+        <div class="feat-text">Daily Market<br>Update</div>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">📚</div>
+        <div class="feat-text">Trading<br>Learning</div>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">🛡️</div>
+        <div class="feat-text">Risk<br>Management</div>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon">💬</div>
+        <div class="feat-text">Learning<br>Community</div>
+      </div>
+    </div>
 
-    <!-- Footer & Compliance -->
-    <footer class="footer-area">
-      <p class="disclaimer-text">
-        Stock market investments are subject to market risks. Past performance does not guarantee future results. This page is for educational and informational purposes only. Please conduct your own research before making any investment decision.
-      </p>
+    <!-- STEP 6: Trust Indicators -->
+    <div class="trust-strip reveal step-d6">
+      <span>🔒 Secure link</span>
+      <span>⚡ Instant</span>
+      <span>✓ No payment</span>
+    </div>
+
+    <!-- STEP 7: Footer & Policy Popups -->
+    <footer class="footer-area reveal step-d7">
+      <div class="copyright-line">
+        © 2026 GUJRATI TRADER · Not affiliated with Telegram
+      </div>
 
       <p class="meta-disclaimer">
-        Disclaimer: This site is not a part of the Facebook™ website or Meta Platforms, Inc. Additionally, this site is NOT endorsed by Facebook™ or Meta in any way. FACEBOOK™ is a trademark of Meta Platforms, Inc.
+        This site is not a part of the Facebook™ website or Meta Platforms, Inc. Additionally, this site is NOT endorsed by Facebook™ or Meta in any way. FACEBOOK™ is a trademark of Meta Platforms, Inc. Educational purposes only; we are not SEBI-registered advisors.
       </p>
 
       <div class="policy-links">
@@ -534,8 +713,6 @@ src="https://www.facebook.com/tr?id=1455972766504771&ev=PageView&noscript=1"
         <button type="button" onclick="openPolicy('disclaimer')">Disclaimer</button>
         <button type="button" onclick="openPolicy('contact')">Contact Us</button>
       </div>
-
-      <div class="copyright">© 2026 Gujarati Trader</div>
     </footer>
   </main>
 
@@ -550,30 +727,29 @@ src="https://www.facebook.com/tr?id=1455972766504771&ev=PageView&noscript=1"
     </div>
   </div>
 
-  <!-- Anti-Bot, Fake Click Shield & Popup Logic -->
+  <!-- Fake-Click Protection & Popup Script -->
   <script>
-    // 1. Policy Popup Data
     const policyContent = {
       terms: {
         title: "Terms & Conditions",
-        html: `<p>Welcome to <strong>Gujarati Trader</strong>. By accessing this website and joining our Telegram community, you agree that all shared charts, levels, and market discussions are strictly for educational and informational purposes.</p>
-               <p>We do not provide SEBI-registered investment advisory or guaranteed return schemes. You are solely responsible for your trading capital and decisions.</p>`
+        html: `<p>Welcome to <strong>GUJRATI TRADER</strong>. By accessing this page and joining our Telegram channel, you acknowledge that all market updates, charts, and educational posts are for learning purposes only.</p>
+               <p>We do not offer guaranteed profit schemes or paid portfolio management. Every trader is responsible for their own financial decisions.</p>`
       },
       privacy: {
         title: "Privacy Policy",
-        html: `<p>Your privacy is important to us. We do not sell, rent, or trade your personal information to third parties.</p>
-               <p>We use standard analytics and Meta Pixel cookies solely to measure ad performance and improve user experience. Clicking the CTA redirects you directly to Telegram's official platform.</p>`
+        html: `<p>We respect your privacy and do not collect, sell, or share your personal contact details with third parties.</p>
+               <p>Standard analytics and Meta Pixel cookies are used strictly to measure campaign performance. Clicking the CTA redirects you directly to the official Telegram app.</p>`
       },
       disclaimer: {
-        title: "Risk & Regulatory Disclaimer",
-        html: `<p>Trading in Equities, Futures, and Options involves substantial risk of financial loss and is not suitable for every investor. Past community results shown are illustrative examples and do not guarantee future profits.</p>
-               <p>Consult a certified financial advisor before taking any live market positions.</p>`
+        title: "Market Risk Disclaimer",
+        html: `<p>Stock market, Futures, and Options trading carry high financial risk. Past educational examples do not guarantee future performance.</p>
+               <p>We are not SEBI-registered investment advisors. Please consult a certified financial planner before investing real capital.</p>`
       },
       contact: {
         title: "Contact Us",
-        html: `<p>For support, educational queries, or feedback regarding Gujarati Trader community:</p>
-               <p><strong>Telegram Support:</strong> Available inside our official channel description.<br>
-               <strong>Response Time:</strong> Within 24 business hours.</p>`
+        html: `<p>For community queries or support regarding <strong>GUJRATI TRADER</strong>:</p>
+               <p><strong>Official Support:</strong> Check the pinned message or bio inside our Telegram channel.<br>
+               <strong>Hours:</strong> Mon – Sat, 9:00 AM – 6:00 PM IST.</p>`
       }
     };
 
@@ -593,13 +769,12 @@ src="https://www.facebook.com/tr?id=1455972766504771&ev=PageView&noscript=1"
       if (e.target.id === 'policyModal') closePolicy();
     }
 
-    // 2. Zero Fake-Click & Bot Protection Shield
+    // Zero Fake-Click & Bot Shield
     (function () {
       const pageLoadTime = Date.now();
       let humanInteracted = false;
       let leadFired = false;
 
-      // Detect genuine human interaction (touch, scroll, mouse move)
       const markHuman = () => { humanInteracted = true; };
       ['touchstart', 'mousemove', 'scroll', 'keydown'].forEach(evt => {
         window.addEventListener(evt, markHuman, { once: true, passive: true });
@@ -619,17 +794,15 @@ src="https://www.facebook.com/tr?id=1455972766504771&ev=PageView&noscript=1"
           const timeElapsed = Date.now() - pageLoadTime;
           const isSyntheticEvent = !e.isTrusted || (e.clientX === 0 && e.clientY === 0);
 
-          // Block bots, automated crawlers, or ultra-fast (< 700ms) scripted clicks
           if (isBotEnvironment() || isSyntheticEvent || (!humanInteracted && timeElapsed < 700)) {
             e.preventDefault();
             return false;
           }
 
-          // Fire Meta Pixel 'Lead' only once per genuine human session
           if (!leadFired && typeof fbq === 'function') {
             leadFired = true;
             fbq('track', 'Lead', {
-              content_name: 'Gujarati Trader Telegram',
+              content_name: 'Gujrati Trader Telegram',
               content_category: 'Stock Market Education'
             });
           }
